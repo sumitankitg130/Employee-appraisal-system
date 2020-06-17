@@ -26,4 +26,8 @@ export class DetailService {
     return this.http.delete("http://localhost:3000/api/detail/"+id)
       .pipe(map(res => res.json()));
   }
+  deleteForUpdate(emp_id){
+    return this.http.delete("http://localhost:3000/api/detail/update/"+emp_id)
+    .pipe(map(res=>res.json()));
+  }
 }

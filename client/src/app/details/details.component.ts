@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DetailService } from '../detail.service';
+
 import { Detail } from '../detail'
 
 @Component({
@@ -35,15 +36,34 @@ export class DetailsComponent implements OnInit {
       mark5:this.mark5,
 
     }
+    
 
     this.detailService.addDetail(newDetail)
     .subscribe(detail => {
-      this.details.push(detail)
+
+      this.deleteIfExists(this.emp_id);
+      
+      this.details.push(detail);
       this.detailService.getDetails()
       .subscribe(details =>
         this.details = details);
     });
     
+  }
+
+  deleteIfExists(emp_id:string){
+    var details=this.details;
+
+    for(var i=0;i<details.length;i++){
+      if(details[i].emp_id==emp_id){
+        this.detailService.deleteForUpdate(details[i].emp_id)
+        .subscribe(data =>{
+          if (data.n == 1) {
+            details.splice(i,1);
+          }
+        });
+      }
+    }
   }
 
   deleteDetail(id: any) {
