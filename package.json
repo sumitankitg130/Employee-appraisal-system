@@ -4,6 +4,8 @@
   "description": "WTA assignment",
   "main": "index.js",
   "dependencies": {
+    "@angular/cli": "^9.1.8",
+    "@angular/http": "^7.2.16",
     "angular": "^1.8.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
