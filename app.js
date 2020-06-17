@@ -23,9 +23,10 @@ mongoose.connection.on("error",(err)=>{
 });
 
 app.use(bodyparser.json()); // HAS TO BE BEFORE ROUTE DECLARATION!!!!!!
+app.use(cors());// THIS ALSO HAS TO BE BEFORE ROUTE !!!!!
 
 app.use("/api",route);
-app.use(cors());
+
 
 
 app.use(express.static(path.join(__dirname,"public")));

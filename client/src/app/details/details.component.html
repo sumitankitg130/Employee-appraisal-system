@@ -1,1 +1,114 @@
-<p>details works!</p>
+<div class="row">
+    <div class="col-md">
+        <div class="container">
+            <h2 class="page-header">Add appraisal</h2>
+            <form (submit)="addDetail()">
+                <div class="form-group">
+                    <label>Employee ID:</label>
+                    <input type="text" [(ngModel)]="emp_id" name="emp_id" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>First Name:</label>
+                    <input type="text" [(ngModel)]="first_name" name="first_name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Last Name:</label>
+                    <input type="text" [(ngModel)]="last_name" name="last_name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Mark 1:</label>
+                    <input type="number" [(ngModel)]="mark1" name="mark1" max="10" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Mark 2:</label>
+                    <input type="number" [(ngModel)]="mark2" name="mark2" max="10" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Mark 3:</label>
+                    <input type="number" [(ngModel)]="mark3" name="mark3" max="10" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Mark 4:</label>
+                    <input type="number" [(ngModel)]="mark4" name="mark4" max="10" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Mark 5:</label>
+                    <input type="number" [(ngModel)]="mark5" name="mark5" max="10" class="form-control">
+                </div>
+                <input type="submit" class="btn btn btn-success" value="Add">
+            </form>
+        </div>
+    </div>
+    <div class="col-md">
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    Employee ID
+                </div>
+                <div class="col-md">
+                    First Name
+                </div>
+                <div class="col-md">
+                    Last Name
+                </div>
+               <div class="col-md">
+                    Mark 1
+                </div>
+                <div class="col-md">
+                    Mark 2
+                </div>
+                <div class="col-md">
+                    Mark 3
+                </div>
+                <div class="col-md">
+                    Mark 4
+                </div>
+                <div class="col-md">
+                    Mark 5
+                </div> 
+                <div class="col-md">
+
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div *ngFor = "let detail of details" >
+                <div class="row">
+                    <div class="col-md">
+                        {{detail.emp_id}}
+                    </div>
+                    <div class="col-md">
+                        {{detail.first_name}}
+                    </div>
+                    <div class="col-md">
+                        {{detail.last_name}}
+                    </div>
+                   <div class="col-md">
+                        {{detail.mark1}}
+                    </div>
+                    <div class="col-md">
+                        {{detail.mark2}}
+                    </div>
+                    <div class="col-md">
+                        {{detail.mark3}}
+                    </div>
+                    <div class="col-md">
+                        {{detail.mark4}}
+                    </div>
+                    <div class="col-md">
+                        {{detail.mark5}}
+                    </div> 
+                    <div class="col-md">
+                        <input type="button" (click)="deleteDetail(detail._id)" value="Delete" class="btn btn-danger">
+                        <br><br>
+                    </div> 
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
